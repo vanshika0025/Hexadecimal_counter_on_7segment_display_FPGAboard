@@ -57,11 +57,11 @@ module top_7seg(
 
     always @(*) begin
         case(active_digit)
-            2'b00: begin digit = 4'b1110; bcd_val = data_in[3:0];   end
-            2'b01: begin digit = 4'b1101; bcd_val = data_in[7:4];   end
-            2'b10: begin digit = 4'b1011; bcd_val = data_in[11:8];  end
-            2'b11: begin digit = 4'b0111; bcd_val = data_in[15:12]; end
-            default: begin digit = 4'b1111; bcd_val = 4'h0;        end
+            2'b00: begin digit = 4'b0001; bcd_val = data_in[3:0];   end
+            2'b01: begin digit = 4'b0010; bcd_val = data_in[7:4];   end
+            2'b10: begin digit = 4'b0100; bcd_val = data_in[11:8];  end
+            2'b11: begin digit = 4'b1000; bcd_val = data_in[15:12]; end
+            default: begin digit = 4'b0000; bcd_val = 4'h0;        end
         endcase
     end
 
